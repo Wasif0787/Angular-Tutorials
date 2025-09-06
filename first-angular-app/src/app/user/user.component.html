@@ -1,0 +1,14 @@
+<div>
+    <button (click)="onSelectUser()">
+        <!-- Property Binding -->
+        <!-- <img [src]="'assets/users/'+selectedUser.avatar" [alt]="selectedUser.name"> -->
+        <!-- If using signals for input use () else just define method name -->
+        <img [src]="imagePath" [alt]="name">
+        <!-- 
+        Interpolation (String Interpolation)
+        -->
+        <!-- <span>{{selectedUser.name}}</span> -->
+        <!-- Readiong signal value -->
+        <span>{{name}}</span>
+    </button>
+</div>
