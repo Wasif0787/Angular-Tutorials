@@ -3,12 +3,12 @@
         <!-- Property Binding -->
         <!-- <img [src]="'assets/users/'+selectedUser.avatar" [alt]="selectedUser.name"> -->
         <!-- If using signals for input use () else just define method name -->
-        <img [src]="imagePath" [alt]="name">
+        <img [src]="imagePath" [alt]="user.name ">
         <!-- 
         Interpolation (String Interpolation)
         -->
         <!-- <span>{{selectedUser.name}}</span> -->
         <!-- Readiong signal value -->
-        <span>{{name}}</span>
+        <span>{{user.name}}</span>
     </button>
 </div>

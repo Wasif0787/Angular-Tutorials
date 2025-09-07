@@ -1,7 +1,6 @@
 import { Component, computed, EventEmitter, input, Input, output, Output, signal } from '@angular/core';
-import { DUMMY_USERS } from '../dummy-users';
+import { User } from './user.model';
 
-// const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
 
 @Component({
   selector: 'app-user',
@@ -10,6 +9,9 @@ import { DUMMY_USERS } from '../dummy-users';
   templateUrl: './user.component.html',
   styleUrl: './user.component.css'
 })
+
+
+
 export class UserComponent {
   // state to hold the selected user
   // selectedUser = DUMMY_USERS[randomIndex];
@@ -21,16 +23,17 @@ export class UserComponent {
   // }
 
   // Input property to receive user data from parent component    
-  @Input({ required: true }) id!: string;
-  @Input({ required: true }) avatar!: string;
-  @Input({ required: true }) name!: string;
+  // @Input({ required: true }) id!: string;
+  // @Input({ required: true }) avatar!: string;
+  // @Input({ required: true }) name!: string;
+  @Input({ required: true }) user!: User;
   @Output() select = new EventEmitter<string>();
 
   // Using signal for output
   // select = output<string>();
 
   get imagePath() {
-    return 'assets/users/' + this.avatar;
+    return 'assets/users/' + this.user.avatar;
   }
 
   // Using signal to define input properties
@@ -47,6 +50,6 @@ export class UserComponent {
 
     // Updating value using signal
     // this.selectedUser.set(DUMMY_USERS[randomIndex]);
-    this.select.emit(this.id);
+    this.select.emit(this.user.id);
   }
 }
